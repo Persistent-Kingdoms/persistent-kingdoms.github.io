@@ -1,0 +1,114 @@
+:root {
+  --discord: #7289DA;
+}
+
+div.card:hover #minetest-svg * {
+  fill: var(--light) !important;
+  stroke: var(--success) !important;
+  transition: fill 1s, stroke 1s;
+}
+
+#minetest-svg * {
+  fill: var(--success) !important;
+  stroke: var(--light) !important;
+  transition: fill 1s, stroke 1s;
+}
+
+#minetest-svg {
+  width: 60%;
+  height: auto;
+}
+
+div.card:hover #discord-svg * {
+  fill: var(--light) !important;
+  stroke: var(--discord) !important;
+  transition: fill 1s, stroke 1s;
+}
+
+#discord-svg * {
+  fill: var(--discord) !important;
+  stroke: var(--light) !important;
+  transition: fill 1s, stroke 1s;
+}
+
+#discord-svg {
+  width: 60%;
+  height: auto;
+}
+
+div.card:hover #github-svg * {
+  fill: var(--light) !important;
+  stroke: var(--dark) !important;
+  transition: fill 1s, stroke 1s;
+}
+
+#github-svg * {
+  fill: var(--dark) !important;
+  stroke: var(--light) !important;
+  transition: fill 1s, stroke 1s;
+}
+
+#github-svg {
+  width: 60%;
+  height: auto;
+}
+
+div.join .card {
+  cursor: pointer !important;
+  border-width: 0.2rem !important;
+}
+
+div.card.minetest {
+  background-color: var(--light) !important;
+  border-color: var(--success) !important;
+  color: var(--success) !important;
+  transition: color 1s, background-color 1s, border-color 1s;
+}
+
+div.card.minetest:hover {
+  background-color: var(--success) !important;
+  color: var(--light) !important;
+  transition: color 1s, background-color 1s, border-color 1s;
+}
+
+div.card.github {
+  background-color: var(--light) !important;
+  border-color: var(--dark) !important;
+  color: var(--dark) !important;
+  transition: color 1s, background-color 1s, border-color 1s;
+}
+
+div.card.github:hover {
+  background-color: var(--dark) !important;
+  color: var(--light) !important;
+  transition: color 1s, background-color 1s;
+}
+
+div.card.discord {
+  background-color: var(--light) !important;
+  border-color: var(--discord) !important;
+  color: var(--discord) !important;
+  transition: color 1s, background-color 1s, border-color 1s;
+}
+
+div.card.discord:hover {
+  background-color: var(--discord) !important;
+  color: var(--light) !important;
+  transition: color 1s, background-color 1s;
+}
+
+.text-lightly-muted {
+  color: gainsboro;
+}
+
+.fa-handshake {
+  fill: var(--primary);
+}
+
+.fa-fist {
+  fill: var(--danger);
+}
+
+.fa-crown {
+  fill: var(--warning);
+}
