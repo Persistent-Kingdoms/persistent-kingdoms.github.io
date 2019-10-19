@@ -241,26 +241,28 @@
   </main>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script>
-    $.getJSON("https://servers.minetest.net/list", function (data) {
-      var servers = "";
-      data = data.list;
-      for (var s in data) {
-        var server = data[s];
-        if (server.gameid === "kingdoms_game") {
-          servers += '<div class="card bg-light"><div class="card body"><div class="media bg-light">' +
-            '<img src="Minetest-logo.svg" class="img-fluid mr-3" style="height: 100% !important; width: auto;"><div class="media-body"><h5 class="mt-0">'
-            + server.name + '</h5><p class="mb-2">' + server.description +
-            '</p><p class="mb-0"><small><b>ADDRESS: </b></small>' + '<code>' + server.address + '</code> <small><b>PORT: </b></small>' + '<code>' + server.port + '</code> ' +
-            '<small><b>STATS: </b></small><span class="badge badge-success"><small><b>PING</b></small> ' + Math.round(server.ping * 1000) + 'ms</span> ' +
-            '<span class="badge badge-success"><small><b>LAG</b></small> ' + Math.round(server.lag * 1000) + 'ms</span></p>' +
-            '<p class="mb-2"><small><b>PLAYERS: </b>' + server.clients_list.join(", ") + '</small> ' +
-            '<span class="badge badge-success"><small><b>ONLINE</b></small> ' + server.clients + " / <small><b>MAX</b></small> " + server.clients_max + "</span> " +
-            '<span class="badge badge-success"><small><b>TOTAL</b></small> ' + server.total_clients + "</span></p>" +
-            '</div></div></div></div>';
+    setInterval(function() {
+      $.getJSON("https://servers.minetest.net/list", function (data) {
+        var servers = "";
+        data = data.list;
+        for (var s in data) {
+          var server = data[s];
+          if (server.gameid === "kingdoms_game") {
+            servers += '<div class="card bg-light"><div class="card body"><div class="media bg-light">' +
+              '<img src="Minetest-logo.svg" class="img-fluid mr-3" style="height: 100% !important; width: auto;"><div class="media-body"><h5 class="mt-0">'
+              + server.name + '</h5><p class="mb-2">' + server.description +
+              '</p><p class="mb-0"><small><b>ADDRESS: </b></small>' + '<code>' + server.address + '</code> <small><b>PORT: </b></small>' + '<code>' + server.port + '</code> ' +
+              '<small><b>STATS: </b></small><span class="badge badge-success"><small><b>PING</b></small> ' + Math.round(server.ping * 1000) + 'ms</span> ' +
+              '<span class="badge badge-success"><small><b>LAG</b></small> ' + Math.round(server.lag * 1000) + 'ms</span></p>' +
+              '<p class="mb-2"><small><b>PLAYERS: </b>' + server.clients_list.join(", ") + '</small> ' +
+              '<span class="badge badge-success"><small><b>ONLINE</b></small> ' + server.clients + " / <small><b>MAX</b></small> " + server.clients_max + "</span> " +
+              '<span class="badge badge-success"><small><b>TOTAL</b></small> ' + server.total_clients + "</span></p>" +
+              '</div></div></div></div>';
+          }
         }
-      }
-      $("#server-stats").html(servers);
-    });
+        $("#server-stats").html(servers);
+      });
+    }, 1000);
   </script>
 </body>
 
