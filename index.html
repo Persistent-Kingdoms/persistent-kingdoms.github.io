@@ -37,9 +37,6 @@
   <link href="persistent_kingdoms.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -101,7 +98,7 @@
               </svg></div>
           <div class="card-body">
             <h5 class="card-title">Pick your allegiance. <small class="text-muted">See for yourself.</small></h5>
-            <p class="card-text">Be it Invictus or Aliamas.</p>
+            <p class="card-text">Be it The Bluehats or Viaggiatori.</p>
           </div>
         </div>
         <div class="card bg-light">
@@ -243,11 +240,7 @@
     </footer>
   </main>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
   <script>
-    //$('main').scrollspy({ target: '#main-navbar' });
     $.getJSON("https://servers.minetest.net/list", function (data) {
       var servers = "";
       data = data.list;
@@ -266,9 +259,9 @@
             '</div></div></div></div>';
         }
       }
-      //$("#server-stats").html(servers);
-      $('main').scrollspy("refresh");
-    });</script>
+      $("#server-stats").html(servers);
+    });
+  </script>
 </body>
 
 </html>
